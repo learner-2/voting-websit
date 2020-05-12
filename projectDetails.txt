@@ -1,0 +1,16 @@
+Pages : 
+Home(PreviousResults, hostElectionPage, ParticipateInElection, Developers(:P)),
+Developers(:P)(Whatever ... ), 
+PreviousResults(List wise in tabs, all previous contests and view more option for each contest for seeing stats of that contest),
+Admin(hostElectionPage)(SignUpTab, LoginTab),
+AdminDashboard(MyElectionsTab(Present List with view more option for each item), HostAnElectionTab)  
+ParticipateInElection(SignUp Tab, Login Tab)(same for voter and candidates),
+OTPVerificationPage(from SignUp Tab), 
+IdLoggedIn(VoterTab(list of all candidates and view more option for each candidate and redio button at side of each candidate, cast vote button(votes can be changed any no of times before contest ends)), CandidateTab(Register/You have already registered))  
+
+DataBase(voting) :
+AdminTable(SlNo, adminId, PhNo/Email, Password),
+HostedContest(SlNo, ElectionName, Description, Current, UniqueId, adminId, //(startdate, duration))
+//'Verify'+UniqueId(uploaded xlsx)
+'Participants'+UniqueId(SlNo, Name, PhNo/Email, Password, VotedFor(initially NULL), //otp)     //both voters and candidates
+'Candidates'+UniqueId(SlNo, Name, PhNo/Email, Password, Photo, Description)  
