@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ViewStats</title>
+  
+  <link rel="canonical" href="">
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  
+  <script src="/JavaScript/jquery-3.3.1.slim.min.js"></script>
+  <script src="/JavaScript/popper.min.js"></script>
+  <script src="/JavaScript/bootstrap.min.js"></script>
+  <script src="/JavaScript/jquery.canvasjs.min.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="/css/argon.css?v=1.0.1" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/css/style.css" rel="stylesheet">
+
+  <script>
+  window.onload = function () {
+
+  //Better to construct options first and then pass it as a parameter
+    var options = {
+      animationEnabled: true,
+      theme: "dark2",
+      backgroundColor: "rgba(73,73,73,0.9)",
+      title: {
+        text: "Vote Results"              
+      },
+      data: [              
+      {
+        // Change type to "doughnut", "line", "splineArea", etc.
+        type: "column",
+        dataPoints: [
+                        <%data.forEach(function(row, i){%>
+						    { label: "<%=row.NAME%>",  y: <%=row.COUNT%>  },
+					    <%});%>
+        ]
+	    }
+	  ]
+  };
+
+    $("#chartContainer").CanvasJSChart(options);
+  }
+  </script>
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+}
+    </style>
+
+    <style>
+      .btn-secondary, .btn-secondary:hover, .btn-secondary:active, 
+      .btn-secondary:visited, .btn-secondary:visited {
+        border: 2px solid orangered;
+        background-color: rgb(45, 46, 36);
+        color: rgb(255, 255, 255);
+      }
+      body {
+        height: 0;
+      }
+    </style>
+  </head>
+
+  <body class="text-center">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                  <a class="navbar-brand" href="#"><h3 class="displayHead">Election System</h3></a>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Home</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="/developers">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <form action="/adminLogout" method="POST">
+                                      <button  type="submit" value="Logout" class="btn btn-outline-danger btn-sm">Logout</button>
+                                    </form>
+                                </a>
+                            </li>
+                    </ul>
+                  </div>
+                </div>
+        </nav>
+    
+
+
+<br>
+<div>
+    <% if(present == '0'){ %>
+        <h2 style="background-color:#575737a3 ;color:#e4dcf7; width:800px; position:relative; left:250px">Contest has ended...</h2>
+    <% } else { %>
+        <h2 style="background-color:#575737a3 ;color:#e4dcf7; width:800px; position:relative; left:250px">Ongoing contest...</h2>
+    <% } %>
+</div>
+
+
+<div class="container nav-wrapper">
+  <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+      <li class="nav-item">
+          <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true">Vote Share</a>
+      </li>
+  </ul>
+</div>
+
+<div class="card shadow container bgcolor">
+  <div class="card-body">
+      <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+					<p class="description">
+             <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+						 </p>
+          </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
