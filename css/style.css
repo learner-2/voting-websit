@@ -1,0 +1,167 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  background-image: url(/Images/ny.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #333;
+  color: #fff;
+}
+
+.bd-placeholder-img {
+  font-size: 1.0rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.bgcolor {
+  background-color: rgba(121, 123, 108, 0.9);
+}
+.shadow .bgcolor{
+  background-color: rgba(73, 73, 73, 0.9)
+}
+
+svg.one {
+  border-style: solid;
+  border-width: 3px;
+}
+
+.displayHead {
+
+    font-size: 60px;
+    color: #e1e19f;
+    font-family: 'Courier','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+
+}
+
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.0rem;
+  }
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+
+/*
+* Form
+*/
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  background-color: #575737a3;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border: 2px solid yellowgreen;
+  background-color: rgb(45, 46, 36);
+  color: rgb(255, 255, 255);
+}
+.form-signin input[type="tel"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;  
+  border-top-right-radius: 0;
+  border: 2px solid rgb(200, 255, 0);
+  background-color: rgb(45, 46, 36);
+  color: rgb(255, 255, 255);
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border: 2px solid yellow;
+  background-color: rgb(45, 46, 36);
+  color: rgb(255, 255, 255);
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: 2px solid orange;
+  background-color: rgb(45, 46, 36);
+  color: rgb(255, 255, 255);
+}
+
+
+.mys{
+  margin-bottom: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: aqua;
+
+}
+
+.bg-mycolor1 {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.bg-mycolor2 {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid greenyellow;
+}
+
+.bg-mycolor3 {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid skyblue;
+}
+
+.img-border {
+  border: 4px solid white;
+}
